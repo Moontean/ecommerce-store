@@ -1,11 +1,8 @@
-
 import { getCategories } from '@/actions/get-categories'
 import Link from 'next/link'
-
-import { NavbarActions } from './navbar-actions'
-import { Container } from './ui/container' 
 import { MainNav } from './main-nav'
-
+import { NavbarActions } from './navbar-actions'
+import { Container } from './ui/container'
 
 export const Navbar = async () => {
   const categories = await getCategories()
