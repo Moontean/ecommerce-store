@@ -9,7 +9,7 @@ import Image from 'next/image'
 import { useRouter } from 'next/navigation'
 import { MouseEventHandler } from 'react'
 import { Currency } from './currency'
-import { Product } from '@/types/types'
+import { Product } from '@/types'
 
 interface ProductCard {
   data: Product

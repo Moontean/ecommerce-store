@@ -1,4 +1,4 @@
-import { Product } from '@/types/types'
+import { Product } from '@/types'
 import { toast } from 'react-hot-toast'
 import { create } from 'zustand'
 import { createJSONStorage, persist } from 'zustand/middleware'

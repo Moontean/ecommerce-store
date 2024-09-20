@@ -1,38 +1,149 @@
-'use client'
+// // 'use client'
 
-import { cn } from '@/lib/utils'
-import { Category } from '@/types/types'
+// // import { cn } from '@/lib/utils'
+// // import { Category } from '@/types'
 
-import Link from 'next/link'
-import { usePathname } from 'next/navigation'
+// // import Link from 'next/link'
+// // import { usePathname } from 'next/navigation'
 
-interface MainNavProps {
-  data: Category[]
+// // interface MainNavProps {
+// //   data: Category[]
+// // }
+
+// // export const MainNav: React.FC<MainNavProps> = ({ data }) => {
+// //   const pathname = usePathname()
+
+// //   const routes = data.map((route) => ({
+// //     href: `/category/${route.id}`,
+// //     label: route.name,
+// //     active: pathname === `/category/${route.id}`,
+// //   }))
+
+// //   return (
+// //     <nav className="mx-6 flex items-center space-x-4 lg:space-x-6">
+// //       {routes.map((route) => (
+// //         <Link
+// //           key={route.href}
+// //           href={route.href}
+// //           className={cn(
+// //             'text-sm font-medium transition-colors hover:text-black',
+// //             route.active ? 'text-black' : 'text-neutral-500',
+// //           )}
+// //         >
+// //           {route.label}
+// //         </Link>
+// //       ))}
+// //     </nav>
+// //   )
+// // }
+// "use client";
+
+
+
+// import React from 'react'
+// import { clsx, type ClassValue } from "clsx"
+// import { twMerge } from "tailwind-merge"
+// import { usePathname } from 'next/navigation';
+// import Link from 'next/link';
+
+// export function cn(...inputs: ClassValue[]) {
+//   return twMerge(clsx(inputs))
+// }
+
+// export interface Billboard {
+//   id: string;
+//   label: string;
+//   imageUrl: string;
+// }
+
+
+// export interface Category {
+//   id: string;  
+//   name: string; 
+//   billboard: Billboard;
+// }
+
+// interface MainNavProps {
+//     data: Category[];
+// };
+
+// const MainNav: React.FC<MainNavProps> = ({
+//     data
+// }) => {
+//     const pathname = usePathname();
+
+//     const routes = data.map((route) => ({
+//         href: `/category/$(route.id)`,
+//         label: route.name,
+//         active: pathname === `/categoyr/${route.id}`
+//     }));
+
+//   return (
+//     <nav className="mx-6 flex items-center space-x-4 lg:space-x-6">
+//       {routes.map((route) => (
+//         <Link
+//          key={route.href}
+//          href={route.href}
+//          className={cn(
+//             "text-sm font-medium transition-colors hover:text-black",
+//             route.active ? "text-black" : "text-neutral-500"
+//          )}
+//          >
+//             {route.label}
+//         </Link>
+//       ))}
+//     </nav>
+//   )
+// }
+
+// export default MainNav
+"use client";
+
+
+
+import React from 'react'
+import { clsx, type ClassValue } from "clsx"
+import { twMerge } from 'tailwind-merge';
+import { Category } from '@/types';
+import { usePathname } from 'next/navigation';
+import Link from 'next/link';
+
+
+export function cn(...inputs: ClassValue[]) {
+  return twMerge(clsx(inputs))
 }
 
-export const MainNav: React.FC<MainNavProps> = ({ data }) => {
-  const pathname = usePathname()
+interface MainNavProps {
+    data: Category[];
+};
 
-  const routes = data.map((route) => ({
-    href: `/category/${route.id}`,
-    label: route.name,
-    active: pathname === `/category/${route.id}`,
-  }))
+const MainNav: React.FC<MainNavProps> = ({
+    data
+}) => {
+    const pathname = usePathname();
+
+    const routes = data.map((route) => ({
+        href: `/category/$(route.id)`,
+        label: route.name,
+        active: pathname === `/categoyr/${route.id}`
+    }));
 
   return (
     <nav className="mx-6 flex items-center space-x-4 lg:space-x-6">
       {routes.map((route) => (
         <Link
-          key={route.href}
-          href={route.href}
-          className={cn(
-            'text-sm font-medium transition-colors hover:text-black',
-            route.active ? 'text-black' : 'text-neutral-500',
-          )}
-        >
-          {route.label}
+         key={route.href}
+         href={route.href}
+         className={cn(
+            "text-sm font-medium transition-colors hover:text-black",
+            route.active ? "text-black" : "text-neutral-500"
+         )}
+         >
+            {route.label}
         </Link>
       ))}
     </nav>
   )
 }
+
+export default MainNav

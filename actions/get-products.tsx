@@ -1,28 +1,41 @@
+// import { Product } from '@/types'
+// import qs from 'query-string'
 
-import { Product } from '@/types/types'
-import qs from 'query-string'
+// const URL = process.env.NEXT_PUBLIC_API_URL;
 
-const URL = `${process.env.NEXT_PUBLIC_API_URL}/products`
+// if (!URL) {
+//   throw new Error('NEXT_PUBLIC_API_URL is not defined');
+// }
 
-interface Query {
-  categoryId?: string
-  colorId?: string
-  sizeId?: string
-  isFeatured?: boolean
-}
+// interface Query {
+//   categoryId?: string;
+//   colorId?: string;
+//   sizeId?: string;
+//   isFeatured?: boolean;
+// }
 
-export const getProducts = async (query: Query): Promise<Product[]> => {
-  const url = qs.stringifyUrl({
-    url: URL,
-    query: {
-      categoryId: query.categoryId,
-      colorId: query.colorId,
-      sizeId: query.sizeId,
-      isFeatured: query.isFeatured,
-    },
-  })
+// export const getProducts = async (query: Query): Promise<Product[]> => {
+//   const url = qs.stringifyUrl({
+//     url: `${URL}/products`,
+//     query: {
+//       categoryId: query.categoryId,
+//       colorId: query.colorId,
+//       sizeId: query.sizeId,
+//       isFeatured: query.isFeatured,
+//     },
+//   });
 
-  const res = await fetch(url)
+//   try {
+//     const res = await fetch(url);
 
-  return res.json()
-}
+//     if (!res.ok) {
+//       throw new Error(`Error fetching products: ${res.statusText}`);
+//     }
+
+//     const data: Product[] = await res.json();
+//     return data;
+//   } catch (error) {
+//     console.error('Failed to fetch products:', error);
+//     return []; // Возвращаем пустой массив в случае ошибки
+//   }
+// };
