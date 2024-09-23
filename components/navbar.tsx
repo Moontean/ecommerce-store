@@ -1,11 +1,9 @@
 
 import { getCategories } from '@/actions/get-categories'
 import Link from 'next/link'
-
-
-import Container from './ui/container'
 import { NavbarActions } from './navbar-actions'
 import MainNav from './main-nav'
+import { Container } from './ui/container';
 
 export const revalidate = 0;
 export const Navbar = async () => {

@@ -3,7 +3,6 @@
 import { IconButton } from '@/components/ui/icon-button'
 import { useCart } from '@/hooks/use-cart'
 import usePreviewModal from '@/hooks/use-preview-modal'
-
 import { Expand, ShoppingCart } from 'lucide-react'
 import Image from 'next/image'
 import { useRouter } from 'next/navigation'
@@ -73,5 +72,6 @@ export const ProductCard: React.FC<ProductCard> = ({ data }) => {
         <Currency value={data.price} />
       </div>
     </div>
+    // <div> Product cart</div>
   )
 }

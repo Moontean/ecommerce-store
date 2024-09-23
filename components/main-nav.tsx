@@ -99,19 +99,12 @@
 // export default MainNav
 "use client";
 
-
-
 import React from 'react'
-import { clsx, type ClassValue } from "clsx"
-import { twMerge } from 'tailwind-merge';
 import { Category } from '@/types';
 import { usePathname } from 'next/navigation';
 import Link from 'next/link';
+import { cn } from '@/lib/utils';
 
-
-export function cn(...inputs: ClassValue[]) {
-  return twMerge(clsx(inputs))
-}
 
 interface MainNavProps {
     data: Category[];
@@ -123,9 +116,9 @@ const MainNav: React.FC<MainNavProps> = ({
     const pathname = usePathname();
 
     const routes = data.map((route) => ({
-        href: `/category/$(route.id)`,
+        href: `/category/${route.id}`,
         label: route.name,
-        active: pathname === `/categoyr/${route.id}`
+        active: pathname === `/category/${route.id}`
     }));
 
   return (
